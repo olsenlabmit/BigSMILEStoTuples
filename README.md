@@ -18,13 +18,13 @@ The code to run on Python3 to generate the tuple vecotr is BigSMILES_vectorizati
 ### Code input
 
 A CSV file with a single column containing the BigSMILES string of the polymer you wish to vectorize. 
-Be sure to write each BigSMILES string in the correct format. For examples, polypropylene would be written as: '{[][$]CC(CC)[$][]}'.
+Be sure to write each BigSMILES string in the correct format. For examples, polypropylene would be written as: '{[][$]CC(C)[$][]}'.
 
 ### Code output
 
 The output of the code is 6 files.
 The full tuple counter vector of the polymer dataset will be saved as a CSV file, with a file for the reduced singlets, doublets and triplets respectively.
-For each of the tuple vector files, a CSV file with the correctly ordered string tuples will be generated. For example, the propylene C-C bond containing the side group carbon will be written as: [['C', 'sp3', 3, 1, 'sg'], '-', ['C', 'sp3', 1, 3, 'bb']], where the singlet ['C', 'sp3', 3, 1, 'sg'] specifies, in order, the atom type, the hybridity, the number of neighboring hydrogen atoms, the number of neighboring non-hydrogen atoms, and the position in the repeat unit.
+For each of the tuple vector files, a CSV file with the correctly ordered string tuples will be generated. For example, the propylene C-C bond containing the side group carbon will be written as: [['C', 'sp3', 3, 1, 'sg'], '-', ['C', 'sp3', 1, 3, 'bb']], where the singlet ['C', 'sp3', 3, 1, 'sg'] specifies, in order, the atom type, the hybridization, the number of neighboring hydrogen atoms, the number of neighboring non-hydrogen atoms, and the position in the repeat unit.
 
 ### Running the code
 
@@ -32,10 +32,7 @@ In the python script BigSMILES_vectorization.py, use the function vectorize that
 
 ### Code limitations
 
-Currently, the only atoms that can be present in the polymer dataset are C, c, N, n, O, o, Si, S, F, Cl, Br (none capitalized being aromatic atoms). 
-The code should only be used for linear polymers. Repeat units that have more than one connector would lead to inproper counting of the bonds that connect different repeat units.
-The code is currectly only effective for polymers with a single repeat unit.
-This vectorization scheam cannot account for specific stereoisomerism.
+Currently, the only atoms that can be present in the polymer dataset are C, c, N, n, O, o, Si, S, F, Cl, Br (none capitalized being aromatic atoms). The code should only be used for linear polymers. Repeat units that have more than one connector would lead to inproper counting of the bonds that connect different repeat units. The code is currectly only effective for polymers with a single repeat unit. This vectorization scheam cannot account for specific stereoisomerism.
 
 
 
